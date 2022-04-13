@@ -2,15 +2,21 @@
 
 Adaptacion de Markopolo a micropython
 
-Instrucciones para cargar
 
-- instalar esptool desde pip3 (de otro modo la funcion erase_flash no se completa y luego falla la inicializacion del modulo)
-- instalar con los comandos (reemplazar puerto):
+* INSTALACION
+
+Instrucciones para instalarlo en NODEMCU/WEMOS/etc. Funciona sin problemas en los chip esp8266. No se ha probado en chips esp32, pero deberia correr sin inconvenientes.
+
+
+
+1. En el directorio 'mycropython' se incluye la version utilizada en este proyecto.
+2. Instalar esptool desde pip3 (de otro modo la funcion erase_flash no se completa y luego falla la inicializacion del modulo).
+3. Instalar con los comandos (reemplazar puerto):
 		
 	~ esptool.py --port /dev/ttyUSB0 erase_flash
 	~ esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 esp8266-20170108-v1.8.7.bin
 
-- ingresar con picocom
+4. Ingresar con picocom
 
 		~ picocom /dev/ttyUSB0 -b115200
 
